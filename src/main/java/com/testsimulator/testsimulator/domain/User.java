@@ -7,6 +7,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import com.testsimulator.testsimulator.domain.enums.TypeUser;
+
 @Entity
 public class User implements Serializable{
 
@@ -18,15 +20,17 @@ public class User implements Serializable{
 	private String cpf;
 	private String email;
 	private String fullName;
+	private Integer typeUser;
 	
 	public User() {}
 
-	public User(Integer id, String cpf, String email, String fullName) {
+	public User(Integer id, String cpf, String email, String fullName, TypeUser typeUser) {
 		super();
 		this.id = id;
 		this.cpf = cpf;
 		this.email = email;
 		this.fullName = fullName;
+		this.typeUser = typeUser.getCod();
 	}
 
 	public Integer getId() {
@@ -59,6 +63,14 @@ public class User implements Serializable{
 
 	public void setFullName(String fullName) {
 		this.fullName = fullName;
+	}
+	
+	public TypeUser getTypeUser() {
+		return TypeUser.toEnum(typeUser);
+	}
+
+	public void setTypeUser(TypeUser typeUser) {
+		this.typeUser = typeUser.getCod();
 	}
 
 	@Override
