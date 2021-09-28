@@ -1,4 +1,4 @@
-package com.testsimulator.testsimulator.resources.exception;
+package com.testsimulator.testsimulator.controller.exceptions;
 
 import javax.servlet.http.HttpServletRequest;
 

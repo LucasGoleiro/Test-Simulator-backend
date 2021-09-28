@@ -1,4 +1,4 @@
-package com.testsimulator.testsimulator.resources.exception;
+package com.testsimulator.testsimulator.controller.exceptions;
 
 import java.io.Serializable;
 

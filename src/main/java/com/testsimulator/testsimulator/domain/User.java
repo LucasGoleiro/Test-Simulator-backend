@@ -10,21 +10,22 @@ import javax.persistence.Id;
 import com.testsimulator.testsimulator.domain.enums.TypeUser;
 
 @Entity
-public class User implements Serializable{
+public class User implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id;
+	private Long id;
 	private String cpf;
 	private String email;
 	private String fullName;
 	private Integer typeUser;
-	
-	public User() {}
 
-	public User(Integer id, String cpf, String email, String fullName, TypeUser typeUser) {
+	public User() {
+	}
+
+	public User(Long id, String cpf, String email, String fullName, TypeUser typeUser) {
 		super();
 		this.id = id;
 		this.cpf = cpf;
@@ -33,11 +34,11 @@ public class User implements Serializable{
 		this.typeUser = typeUser.getCod();
 	}
 
-	public Integer getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
@@ -64,7 +65,7 @@ public class User implements Serializable{
 	public void setFullName(String fullName) {
 		this.fullName = fullName;
 	}
-	
+
 	public TypeUser getTypeUser() {
 		return TypeUser.toEnum(typeUser);
 	}
